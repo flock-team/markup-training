@@ -1,7 +1,4 @@
-
 extends /inc/layout/_base
-
-
 
 block meta
   title Flockマークアップトレーニング Vol.01
@@ -27,3 +24,6 @@ block content
     each item in list
       dt #{item.title}
       dd #{item.text}
+
+  - var test = 'テスト<br>テスト';
+  p !{test}
