@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@forward '../../node_modules/ac-css-reset/sass/ac-css-reset.scss';
+
+// base
+@forward './base/base';
+
+// components
+@forward './components/container';
+@forward './components/footer';
+@forward './components/bnr';
+
+// lp
+@forward './lp/heroview';
+@forward './lp/case';
+@forward './lp/feature';
+@forward './lp/usage';
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800;900&display=swap');

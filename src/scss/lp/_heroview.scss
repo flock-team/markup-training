@@ -1,0 +1,7 @@
+@use '../config/variables';
+
+.heroview {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: variables.$color-base;
+}

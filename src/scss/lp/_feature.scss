@@ -1,0 +1,7 @@
+@use '../config/variables';
+
+.feature {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: variables.$color-base;
+}
