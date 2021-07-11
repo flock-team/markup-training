@@ -1,0 +1,29 @@
+
+extends /inc/layout/_base
+
+
+
+block meta
+  title Flockマークアップトレーニング Vol.01
+  meta(name="description", content="Flockマークアップトレーニング Vol.01")
+
+block content
+  dl
+    -
+      var list = [
+        {
+          title: 'A',
+          text: 'テキストA',
+        },
+        {
+          title: 'B',
+          text: 'テキストB',
+        },
+        {
+          title: 'C',
+          text: 'テキストC',
+        },
+      ];
+    each item in list
+      dt #{item.title}
+      dd #{item.text}
