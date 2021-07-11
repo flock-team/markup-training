@@ -1,0 +1,23 @@
+
+@use '../config/variables';
+
+body {
+  line-height: 1.15;
+  color: variables.$color-text;
+  font-family: variables.$font-default;
+  font-feature-settings: 'palt';
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
