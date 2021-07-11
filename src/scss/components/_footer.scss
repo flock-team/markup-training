@@ -1,8 +1,35 @@
 @use '../config/variables';
+@use '../config/mixins';
 
 .footer {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 30px;
+  padding-bottom: 40px;
   background-color: variables.$color-text;
   color: #fff;
+
+  @include mixins.md {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  &__logo {
+    font-family: variables.$font-rounded;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1.28px;
+    opacity: 1;
+  }
+}
+
+.footer-info {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #ccc;
+
+  @include mixins.md {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
