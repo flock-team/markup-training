@@ -1,2 +1,19 @@
 footer.footer
-  .container フッターが入ります。
+  .container
+    p.footer__logo LOGO
+    .footer-info
+      .footer-link
+        -
+          var children = [
+            {
+              'label': 'プライバシーポリシー',
+              'url': 'https://google.com'
+            },
+            {
+              'label': '利用規約',
+              'url': 'https://google.com'
+            },
+          ];
+        each child in children
+          a.footer-link__child #{child.label}
+      .footer-copyright &copy; 2021 xxxxx.
