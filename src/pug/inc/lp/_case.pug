@@ -1,2 +1,26 @@
+mixin casebox(image, label, description)
+ li.casebox
+  .casebox-image
+    img(src=image)
+  .casebox-text
+    p.casebox-text__label #{label}
+    p.casebox-text__description #{description}
+
 section.case
-  .container ヒーロービュー下のコンテンツが入ります。
+  .container
+    ul.caseboxes
+      +casebox(
+        '/assets/images/case-image-01.png',
+        'こどもの成長日記をみんなで共有',
+        'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'
+        )
+      +casebox(
+        '/assets/images/case-image-02.png',
+        'ふたりだけの特別なイベントを共有',
+        'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'
+        )
+      +casebox(
+        '/assets/images/case-image-03.png',
+        '親友と過ごした大切な思い出を共有',
+        'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'
+        )
