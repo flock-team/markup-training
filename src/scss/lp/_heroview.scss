@@ -4,13 +4,10 @@
 $text-color: #fff;
 
 .heroview {
-  background-image: url(../images/kv-bg-image.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: 68% / cover no-repeat url(../images/kv-bg-image.png) ;
   height: 100vh;
   padding: 22px 0 0;
   position: relative;
-  background-position-x: 68%;
   .heroview-filter{
     background-color: rgb(85, 85, 85, 0.2);
     position: absolute;
@@ -36,7 +33,7 @@ $text-color: #fff;
         }
       }
       &__right{
-        .heroview-header__cv{
+        .heroview-header__link{
           width: 277px;
           height: 57px;
           font-size: 14px;
@@ -53,12 +50,12 @@ $text-color: #fff;
       }
     }
   }
-  .heroview__contents{
+  .heroview-contents{
     margin-top: 130px;
     @include mixins.md(){
       margin-top: 184px;
     }
-    .heroview-content_titile{
+    .heroview-contents__title{
       font-size: 35px;
       letter-spacing: 1.6px;
       color: $text-color;
@@ -68,7 +65,7 @@ $text-color: #fff;
         font-size: 40px;
       }
     }
-    .heroview-content_text{
+    .heroview-contents__text{
       font-size: 14px;
       color: $text-color;
       line-height: 1.55;
@@ -77,7 +74,7 @@ $text-color: #fff;
         font-size: 16px;
       }
     }
-    .heroview-content_cv{
+    .heroview-contents__link{
       font-size: 14px;
       color: $text-color;
       letter-spacing: 0.84px;
