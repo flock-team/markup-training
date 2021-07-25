@@ -70,7 +70,8 @@
   @include mixins.md {
     padding: 60px;
     position: absolute;
-    width: 660px;
+    width: 55%;
+    max-width: 660px;
   }
 }
 
