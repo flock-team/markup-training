@@ -10,9 +10,15 @@ section.usage
             heading: '会員登録'
           },
           {
+            arrow : 'assets/images/icon-arrow.svg',
+          },
+          {
             number : '2',
             icon : 'assets/images/icon-event.svg',
             heading : 'イベント作成'
+          },
+          {
+            arrow : 'assets/images/icon-arrow.svg',
           },
           {
             number : '3',
@@ -20,9 +26,15 @@ section.usage
             heading : '画像投稿'
           },
           {
+            arrow : 'assets/images/icon-arrow.svg',
+          },
+          {
             number : '4',
             icon : 'assets/images/icon-group.svg',
             heading : 'イベント招待'
+          },
+          {
+            arrow : 'assets/images/icon-arrow.svg',
           },
           {
             number : '5',
@@ -32,7 +44,20 @@ section.usage
         ];
       each usage in usages
         li.usage-content
-          p.usage-content__number #{usage.number}
-          .usage-content__icon
-            img(src=usage.icon)
-          p.usage-content__heading #{usage.heading}
+          if usage.number
+            p.usage-content__number #{usage.number}
+          else
+          
+          if usage.icon
+            .usage-content__icon
+              img(src=usage.icon)
+          else
+
+          if usage.arrow
+            .usage-content__arrowicon
+              img(src=usage.arrow)
+          else
+
+          if usage.heading
+            p.usage-content__heading #{usage.heading}
+          else

@@ -23,27 +23,9 @@ section.usage {
       .usage-content{
         list-style-type: none;
         position: relative;
-        margin-bottom: 100px;
+        margin-bottom: 40px;
         @include mixins.md(){
           margin-bottom: unset;
-        }
-        &::after{
-          position: absolute;
-          content: '';
-          margin: auto;
-          bottom: -80px;
-          display: block;
-          width: 18px;
-          height: 30px;
-          background: center / contain no-repeat url(../images/icon-arrow.svg);
-          transform: translateY(-50%) translateX(-50%) rotateZ(90deg);
-          left: 50%;
-          @include mixins.md(){
-            top: 50%;
-            left: 145%;
-            bottom: unset;
-            transform: translateY(-50%) translateX(-50%);
-          }
         }
         &__number{
           background-color: variables.$color-main;
@@ -67,6 +49,16 @@ section.usage {
           img{
             width: 36px;
             height: 36px;
+          }
+        }
+        &__arrowicon{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          transform: rotateZ(90deg);
+          @include mixins.md(){
+            transform: unset;
           }
         }
         &__heading{
