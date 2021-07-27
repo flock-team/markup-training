@@ -1,2 +1,14 @@
 section.feature
-  .container 特徴のコンテンツが入ります。
+  .container
+    h2.feature__title xxxxxの特徴
+
+    .feature__contents
+      -
+        var features = [
+          '招待したメンバーのみ閲覧・投稿ができる',
+          'いいねやコメントでコミュニケーションできる'
+        ];
+      each feature in features
+        article.feature-content
+          img.feature-content__img(src="https://placehold.jp/570x320.png", alt="")
+          p.feature-content__text #{feature}
