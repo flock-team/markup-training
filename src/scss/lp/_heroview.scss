@@ -1,7 +1,87 @@
 @use '../config/variables';
+@use '../config/mixins';
+
+$text-color: #fff;
 
 .heroview {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background-color: variables.$color-base;
+  background: 68% / cover no-repeat url(../images/kv-bg-image.png) ;
+  height: 100vh;
+  padding: 22px 0 0;
+  position: relative;
+  .heroview-filter{
+    background-color: rgb(85, 85, 85, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .container{
+    position: relative;
+    .heroview-header{
+      display: flex;
+      justify-content:space-between;
+      align-items: center;
+      &__left{
+        .heroview-header__logo{
+          font-size: 32px;
+          color: $text-color;
+          font-family: variables.$font-rounded;
+          letter-spacing: 1.28px;
+          font-weight: 900;
+        }
+      }
+      &__right{
+        .heroview-header__link{
+          width: 277px;
+          height: 57px;
+          font-size: 14px;
+          color: $text-color;
+          border: $text-color 1px solid;
+          border-radius: 4px;
+          padding: 21px 35px;
+          display: none;
+          letter-spacing: 0.84px;
+          @include mixins.md(){
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  .heroview-contents{
+    margin-top: 130px;
+    @include mixins.md(){
+      margin-top: 184px;
+    }
+    .heroview-contents__title{
+      font-size: 35px;
+      letter-spacing: 1.6px;
+      color: $text-color;
+      line-height: 1.25;
+      margin-bottom: 32px;
+      @include mixins.md(){
+        font-size: 40px;
+      }
+    }
+    .heroview-contents__text{
+      font-size: 14px;
+      color: $text-color;
+      line-height: 1.55;
+      margin-bottom: 32px;
+      @include mixins.md(){
+        font-size: 16px;
+      }
+    }
+    .heroview-contents__link{
+      font-size: 14px;
+      color: $text-color;
+      letter-spacing: 0.84px;
+      padding: 21px 42px;
+      display: inline-block;
+      background-color: variables.$color-main;
+      border-radius: 4px;
+    }
+  }
 }
