@@ -1,4 +1,107 @@
+@use '../config/variables';
+@use '../config/mixins';
+
 .case {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+
+  @include mixins.md {
+    margin-top: 120px;
+    margin-bottom: 120px;
+  }
+}
+
+.caseboxes {
+  list-style-type: none;
+}
+
+.casebox {
+  margin-bottom: 48px;
+
+  @include mixins.md {
+    margin-bottom: 90px;
+    position: relative;
+    max-width: 1200px;
+    height: 460px;
+
+    &:nth-of-type(odd) {
+      .casebox-image {
+        position: absolute;
+        left: 0;
+      }
+      .casebox-text {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    &:nth-of-type(even) {
+      .casebox-image {
+        position: absolute;
+        right: 0;
+      }
+      .casebox-text {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.casebox-image {
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @include mixins.md {
+    width: 600px;
+  }
+}
+
+.casebox-text {
+  position: relative;
+  padding: 24px 16px;
+  background: #FFF;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.102);
+  border-radius: 8px;
+  margin-top: -32px;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  @include mixins.md {
+    border-radius: 16px;
+    padding: 60px;
+    position: absolute;
+    width: 55%;
+    max-width: 660px;
+  }
+}
+
+.casebox-text__label {
+  font-family: variables.$font-default;
+  font-size: 20px;
+  color: variables.$color-text;
+  text-align: left;
+
+  margin-bottom: 16px;
+
+  @include mixins.md {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+.casebox-text__description {
+  font-family: variables.$font-thin;
+  font-size: 14px;
+  line-height: 1.5;
+  color: variables.$color-text;
+  text-align: left;
+
+  @include mixins.md {
+    font-size: 16px;
+  }
 }

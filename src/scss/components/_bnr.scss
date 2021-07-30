@@ -1,7 +1,64 @@
 @use '../config/variables';
+@use '../config/mixins';
 
 .bnr {
-  padding-top: 120px;
-  padding-bottom: 120px;
-  background-color: variables.$color-base;
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background: 75% / cover no-repeat url(../images/cv-bg-image.png) ;
+  color: #fff;
+  text-align: center;
+  @include mixins.md {
+    background-position: center;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(variables.$color-main, 0.45);
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 800;
+    font-family: variables.$font-rounded;
+    @include mixins.md {
+      font-size: 32px;
+    }
+    br {
+      @include mixins.md {
+        display: none;
+      }
+    }
+  }
+
+  &__contents {
+    margin-top: 48px;
+  }
+
+  &__link {
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+    padding: 21px 35px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background-color .3s, color .3s;
+    &:hover {
+      background-color: #fff;
+      color: variables.$color-main;
+    }
+  }
 }
