@@ -1,6 +1,5 @@
 @use '../config/variables';
 @use '../config/mixins';
-@use 'heroview';
 
 section.usage {
   padding: 120px 0;
@@ -29,7 +28,7 @@ section.usage {
         }
         &__number{
           background-color: variables.$color-main;
-          color: heroview.$text-color;
+          color: #fff;
           width: 41px;
           height: 41px;
           font-size: 20px;
@@ -74,7 +73,7 @@ section.usage {
             }
           }
         }
-        &:nth-child(2){
+        &:nth-child(3){
           .usage-content__icon{
             padding: 10px 0 0 10px;
             img{

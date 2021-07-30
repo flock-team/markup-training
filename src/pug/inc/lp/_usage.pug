@@ -46,18 +46,14 @@ section.usage
         li.usage-content
           if usage.number
             p.usage-content__number #{usage.number}
-          else
           
           if usage.icon
             .usage-content__icon
               img(src=usage.icon)
-          else
 
           if usage.arrow
             .usage-content__arrowicon
               img(src=usage.arrow)
-          else
 
           if usage.heading
             p.usage-content__heading #{usage.heading}
-          else
