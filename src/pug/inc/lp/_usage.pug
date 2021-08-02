@@ -1,59 +1,37 @@
 section.usage
   .container
     h2.usage__title xxxxxのつかいかた
-    ul.usage-contents
+    ul.usage__contents
       -
         var usages = [
           {
-            number : '1',
             icon : 'assets/images/icon-login.svg',
             heading: '会員登録'
           },
           {
-            arrow : 'assets/images/icon-arrow.svg',
-          },
-          {
-            number : '2',
             icon : 'assets/images/icon-event.svg',
             heading : 'イベント作成'
           },
           {
-            arrow : 'assets/images/icon-arrow.svg',
-          },
-          {
-            number : '3',
             icon : 'assets/images/icon-add-photo.svg',
             heading : '画像投稿'
           },
           {
-            arrow : 'assets/images/icon-arrow.svg',
-          },
-          {
-            number : '4',
             icon : 'assets/images/icon-group.svg',
             heading : 'イベント招待'
           },
           {
-            arrow : 'assets/images/icon-arrow.svg',
-          },
-          {
-            number : '5',
             icon : 'assets/images/icon-comment.svg',
             heading : 'コメント投稿'
           },
         ];
-      each usage in usages
+      each usage, i in usages
         li.usage-content
-          if usage.number
-            p.usage-content__number #{usage.number}
-          
+          p.usage-content__number #{i + 1}
+
           if usage.icon
             .usage-content__icon
               img(src=usage.icon)
-
-          if usage.arrow
-            .usage-content__arrowicon
-              img(src=usage.arrow)
 
           if usage.heading
             p.usage-content__heading #{usage.heading}
