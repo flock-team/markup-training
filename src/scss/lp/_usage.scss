@@ -1,103 +1,77 @@
 @use '../config/variables';
 @use '../config/mixins';
-@use 'heroview';
 
-section.usage {
+.usage {
   padding: 120px 0;
-  .container{
-    text-align: center;
-    h2.usage__title{
-      font-size: 32px;
-      margin-bottom: 60px;
-      font-family: variables.$font-rounded;
+  text-align: center;
+  &__title {
+    font-size: 32px;
+    margin-bottom: 60px;
+    font-family: variables.$font-rounded;
+  }
+  &__contents {
+    display: flex;
+    justify-content: space-between;
+    max-width: 888px;
+    margin: 0 auto;
+    flex-direction: column;
+    @include mixins.md(){
+      flex-direction: row;
     }
-    ul.usage-contents{
-      display: flex;
-      justify-content: space-between;
-      max-width: 888px;
-      margin: 0 auto;
-      flex-direction: column;
+  }
+}
+
+.usage-content {
+  list-style-type: none;
+  position: relative;
+  &:not(:last-of-type) {
+    margin-bottom: 80px;
+    @include mixins.md {
+      margin-bottom: 0;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      margin: auto;
+      bottom: -65px;
+      display: block;
+      width: 18px;
+      height: 30px;
+      background: center / contain no-repeat url(../images/icon-arrow.svg);
+      transform: translateY(-50%) translateX(-50%) rotateZ(90deg);
+      left: 50%;
       @include mixins.md(){
-        flex-direction: row;
-      }
-      .usage-content{
-        list-style-type: none;
-        position: relative;
-        margin-bottom: 100px;
-        @include mixins.md(){
-          margin-bottom: unset;
-        }
-        &::after{
-          position: absolute;
-          content: '';
-          margin: auto;
-          bottom: -80px;
-          display: block;
-          width: 18px;
-          height: 30px;
-          background: center / contain no-repeat url(../images/icon-arrow.svg);
-          transform: translateY(-50%) translateX(-50%) rotateZ(90deg);
-          left: 50%;
-          @include mixins.md(){
-            top: 50%;
-            left: 145%;
-            bottom: unset;
-            transform: translateY(-50%) translateX(-50%);
-          }
-        }
-        &__number{
-          background-color: variables.$color-main;
-          color: heroview.$text-color;
-          width: 41px;
-          height: 41px;
-          font-size: 20px;
-          border-radius: 50%;
-          line-height: 41px;
-          margin: 0 auto 19px;
-        }
-        &__icon{
-          margin: 0 auto 29px;
-          height: 100px;
-          width: 100px;
-          background-color: #FFF3F2;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 50%;
-          img{
-            width: 36px;
-            height: 36px;
-          }
-        }
-        &__heading{
-          font-size: 18px;
-          color: variables.$color-text;
-          font-weight: 600;
-        }
-        &:first-child{
-          .usage-content__icon{
-            img{
-              width: 32px;
-              height: 30px;
-            }
-          }
-        }
-        &:nth-child(2){
-          .usage-content__icon{
-            padding: 10px 0 0 10px;
-            img{
-              width: 40px;
-              height: 45px;
-            }
-          }
-        }
-        &:last-child{
-          &::after{
-            display: none;
-          }
-          margin-bottom: 0;
-        }
+        margin: 0;
+        top: 50%;
+        left: clamp(130px, 17vw, 150px);
+        bottom: unset;
+        transform: translateY(-50%) translateX(-50%);
       }
     }
+  }
+  &__number{
+    background-color: variables.$color-main;
+    color: #fff;
+    width: 41px;
+    height: 41px;
+    font-size: 20px;
+    border-radius: 50%;
+    line-height: 41px;
+    margin: 0 auto 19px;
+  }
+  &__icon{
+    margin: 0 auto 29px;
+    height: 100px;
+    width: 100px;
+    background-color: #FFF3F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  &__heading{
+    font-size: 18px;
+    color: variables.$color-text;
+    font-weight: 600;
   }
 }
